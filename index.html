@@ -1,6 +1,30 @@
 <html>
 	<head>
 		<title>Crate Economy Prototype</title>
+		<style>
+td.negative {
+	color: red;
+}
+td.numeric {
+	text-align: right;
+}
+table, td, th {
+	border: 1px solid black;
+}
+th, td {
+	padding: 0.5em;
+}
+th {
+	font-weight: bold;
+	text-align: left;
+}
+th.total {
+	text-align: right;
+}
+p.tagline {
+	display: none;
+}
+		</style>
 	</head>
 	<body>
 		<h1 class="title">Crate Econonmy Prototype</h1>
@@ -10,78 +34,130 @@
 		<p class="tagline">Giving you the hard data on crates.</p>
 		<p class="tagline">Telling you why it's not worth opening that crate.</p>
 		
-		<table>
+		<table cellspacing="0" class="crate">
 			<tr>
-				<td>Item</td>
-				<td>Probability</td>
-				<td>ManCo Store Price</td>
-				<td>Market Price</td>
-				<td>Savings</td>
+				<th colspan="5" class="title">Crate #16</th>
+			</tr>
+			<tr>
+				<th>Item</th>
+				<th>Probability</th>
+				<th>ManCo Store Price</th>
+				<th>Market Price</th>
+				<th>Savings</th>
+			</tr>
+			<tr>
+				<th>Key</th>
+				<td class="numeric"></td>
+				<td class="numeric">$2.49</td>
+				<td class="numeric"></td>
+				<td class="numeric"></td>
 			</tr>
 			<tr>
 				<td>Indubitably Green</td>
-				<td>17%</td>
-				<td></td>
-				<td>1.12</td>
-				<td>-1.37</td>
+				<td class="numeric">17.00%</td>
+				<td class="numeric"></td>
+				<td class="numeric">$1.12</td>
+				<td class="numeric negative">-$1.37</td>
 			</tr>
 			<tr>
 				<td>Color No. 216-190-216</td>
-				<td>17%</td>
-				<td></td>
-				<td>0.95</td>
-				<td>-1.54</td>
+				<td class="numeric">17.00%</td>
+				<td class="numeric"></td>
+				<td class="numeric">$0.95</td>
+				<td class="numeric negative">-$1.54</td>
 			</tr>
 			<tr>
 				<td>Muskelmannbraun</td>
-				<td>17%</td>
-				<td></td>
-				<td>0.41</td>
-				<td>-2.08</td>
+				<td class="numeric">17.00%</td>
+				<td class="numeric"></td>
+				<td class="numeric">$0.41</td>
+				<td class="numeric negative">-$2.08</td>
 			</tr>
 			<tr>
 				<td>Shortstop</td>
-				<td>14.5%</td>
-				<td></td>
-				<td>0.31</td>
-				<td>-2.18</td>
+				<td class="numeric">14.50%</td>
+				<td class="numeric"></td>
+				<td class="numeric">$0.31</td>
+				<td class="numeric negative">-$2.18</td>
 			</tr>
 			<tr>
 				<td>Mad Milk</td>
-				<td>14.5%</td>
-				<td></td>
-				<td>0.85</td>
-				<td>-1.64</td>
+				<td class="numeric">14.50%</td>
+				<td class="numeric"></td>
+				<td class="numeric">$0.85</td>
+				<td class="numeric negative">-$1.64</td>
 			</tr>
 			<tr>
 				<td>Milkman</td>
-				<td>6.33%</td>
-				<td>7.49</td>
-				<td></td>
-				<td>5</td>
+				<td class="numeric">6.33%</td>
+				<td class="numeric">$7.49</td>
+				<td class="numeric"></td>
+				<td class="numeric">$5.00</td>
 			</tr>
 			<tr>
 				<td>Flipped Trilby</td>
-				<td>6.33%</td>
-				<td>4.99</td>
-				<td></td>
-				<td>2.5</td>
+				<td class="numeric">6.33%</td>
+				<td class="numeric">$4.99</td>
+				<td class="numeric"></td>
+				<td class="numeric">$2.50</td>
 			</tr>
 			<tr>
 				<td>Whoopee Cap</td>
-				<td>6.33%</td>
-				<td></td>
-				<td>1.62</td>
-				<td>-0.87</td>
+				<td class="numeric">6.33%</td>
+				<td class="numeric"></td>
+				<td class="numeric">$1.62</td>
+				<td class="numeric negative">-$0.87</td>
 			</tr>
 			<tr>
-				<th colspan="4">Expected Savings:</th>
-				<td>-0.98</td>
+				<th class="total" colspan="4">Expected Savings:</th>
+				<td class="numeric negative">-$0.98</td>
 			</tr>
 			<tr>
-				<th colspan="4">Probability of losing money:</th>
-				<td>86.33%</td>
+				<th class="total" colspan="4">Probability of losing money:</th>
+				<td class="numeric">86.33%</td>
 			</tr>
 		</table>
+		<p>Site designed and created by <a href="https://steamcommunity.com/id/skurrier/" target="_blank">Julian Calaby AKA SkUrRiEr</a> If you'd like to support me, please send me a TF2 item.</p>
+		<h2 class="sources">This site uses data from the following sources:</h2>
+		<table class="sources" cellspacing="0">
+			<tr>
+				<th>Source</th>
+				<th>Last Updated</th>
+				<th>Oldest Data</th>
+			</tr>
+			<tr>
+				<td><a href="http://steampowered.com/" target="_blank">Powered by Steam</a>
+					<ul>
+						<li><a href="https://wiki.teamfortress.com/wiki/WebAPI/GetSchema" target="_blank">TF2 Item Schema</a></li>
+					</ul>
+				</td>
+				<td>2016-03-21</td>
+				<td>2016-03-17</td>
+			</tr>
+			<tr>
+				<td><a href="http://backpack.tf/" target="_blank">Backpack.tf</a>
+					<ul>
+						<li><a href="http://backpack.tf/api/market" target="_blank">TF2 Market Pricing</a></li>
+						<li><a href="http://backpack.tf/api/prices" target="_blank">Backpack.tf trade pricelist</a></li>
+					</ul>
+				</td>
+				<td>2016-03-21</td>
+				<td>2016-03-17</td>
+			</tr>
+			<tr>
+				<td><a href="http://www.trade.tf/" target="_blank">Trade.tf</a>
+					<ul>
+						<li><a href="http://www.trade.tf/user/api/key" target="_blank">Trade.tf trade pricelist</a></li>
+					</ul>
+				</td>
+				<td>2016-03-21</td>
+				<td>2016-03-17</td>
+			</tr>
+		</table>
+		<p>This site is hosted by <a href="https://pages.github.com/" target="_blank">Github Pages</a></p>
+		<p class="legal">This site aggregates data which is publically available. This site does not aggregate, display or use any end user data.</p>
+		<p class="legal">This site does not provide financial information. All calculations and conclusions are based on highly variable source data which is likely to be outdated. Please double-check the calculations and conclusions before making any decisions based upon this data.</p>
+		<p class="legal">NO WARRANTY: Julian Calaby provides this site and data "as is", "with all faults" and "as available" and the entire risk as to satisfactory quality, performance, accuracy, and effort is with you. To the maximum extent permitted by applicable law, Julian Calaby and its suppliers make no representations, warranties or conditions, express or implied. Julian Calaby and its suppliers expressly disclaim any and all warranties or conditions, express, statutory and implied, including without limitation (a) warranties or conditions of merchantability, fitness for a particular purpose, workmanlike effort, accuracy, title, quiet enjoyment, no encumbrances, no liens and non-infringement, (b) warranties or conditions arising through course of dealing or usage of trade, and (c) warranties or conditions of uninterrupted or error-free access or use.</p>
+		<p class="legal">LIABILITY LIMITATION; EXCLUSIVE REMEDY: in no event will Julian Calaby or any supplier be liable for any damages, including without limitation any indirect, consequential, special, incidental, or punitive damages arising out of, based on, or resulting from the use of this data, even if such party has been advised of the possibility of such damages. the exclusion of damages under this paragraph is independent of your exclusive remedy and survives in the event such remedy fails of its essential purpose or is otherwise deemed unenforceable. these limitations and exclusions apply without regard to whether the damages arise from (a) breach of contract, (b) breach of warranty, (c) negligence, or (d) any other cause of action, to the extent such exclusion and limitations are not prohibited by applicable law. if you do not agree with any part of these terms of use, or you have any dispute or claim against Julian Calaby or its suppliers with respect to these terms of use or the services, then your sole and exclusive remedy is to discontinue using this site and data.</p>
 	</body>
 </html>
