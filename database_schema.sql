@@ -26,7 +26,8 @@ CREATE TABLE `crate` (
   `itemID` int(10) unsigned NOT NULL,
   `series` int(11) DEFAULT NULL,
   `keyItemID` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`itemID`)
+  PRIMARY KEY (`itemID`),
+  KEY `keyItemID` (`keyItemID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -42,7 +43,9 @@ CREATE TABLE `crateItem` (
   `itemID` int(10) unsigned NOT NULL,
   `order` int(11) DEFAULT NULL,
   `probability` decimal(10,3) NOT NULL,
-  PRIMARY KEY (`crateID`,`itemID`)
+  PRIMARY KEY (`crateID`,`itemID`),
+  KEY `crateID` (`crateID`),
+  KEY `itemID` (`itemID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -58,7 +61,8 @@ CREATE TABLE `currency` (
   `name` text NOT NULL,
   `symbol` varchar(10) NOT NULL,
   `sourceID` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`currencyID`)
+  PRIMARY KEY (`currencyID`),
+  KEY `sourceID` (`sourceID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -74,7 +78,9 @@ CREATE TABLE `currencyReference` (
   `toCurrencyID` int(10) unsigned NOT NULL,
   `timestamp` datetime NOT NULL,
   `exchangeRate` decimal(10,3) NOT NULL,
-  PRIMARY KEY (`fromCurrencyID`,`toCurrencyID`,`timestamp`)
+  PRIMARY KEY (`fromCurrencyID`,`toCurrencyID`,`timestamp`),
+  KEY `fromCurrencyID` (`fromCurrencyID`),
+  KEY `toCurrencyID` (`toCurrencyID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -93,6 +99,7 @@ CREATE TABLE `item` (
   `itemName` text,
   `quality` int(11) NOT NULL,
   `imageURL` text,
+  `rawData` blob,
   PRIMARY KEY (`itemID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -113,7 +120,10 @@ CREATE TABLE `price` (
   `min` decimal(10,3) DEFAULT NULL,
   `max` decimal(10,3) DEFAULT NULL,
   `type` enum('buy','sell','trade') NOT NULL DEFAULT 'buy',
-  PRIMARY KEY (`sourceID`,`itemID`,`timestamp`,`type`)
+  `rawData` blob,
+  PRIMARY KEY (`sourceID`,`itemID`,`timestamp`,`type`),
+  KEY `sourceID` (`sourceID`),
+  KEY `itemID` (`itemID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -144,4 +154,4 @@ CREATE TABLE `source` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-28 16:06:21
+-- Dump completed on 2016-03-29 13:08:47
