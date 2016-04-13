@@ -1,0 +1,16 @@
+{
+	"name": "skurrier/crateeconomy",
+	"description": "Economic / statistical crate analysis website for TF2",
+	"license": "GPL-3",
+	"authors": [
+		{
+			"name": "Julian Calaby",
+			"email": "julian.calaby@gmail.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"CE\\": "lib/"
+		}
+	}
+}
