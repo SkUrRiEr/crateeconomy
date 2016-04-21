@@ -12,5 +12,8 @@
 		"psr-4": {
 			"CE\\": "lib/"
 		}
+	},
+	"require": {
+		"guzzlehttp/guzzle": "~6.0"
 	}
 }
