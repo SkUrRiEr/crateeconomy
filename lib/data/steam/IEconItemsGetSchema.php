@@ -82,8 +82,8 @@ class IEconItemsGetSchema
             }
 
             $this->meta = array(
-                "status" => $data->status,
-                "items_game_url" => $data->items_game_url
+                "status" => $data["status"],
+                "items_game_url" => $data["items_game_url"]
             );
         }
 
@@ -102,8 +102,9 @@ class IEconItemsGetSchema
     {
         if (!isset($this->qualities)) {
             $data = $this->getRaw("qualities");
+            $qualityNames = $this->getRaw("qualityNames");
 
-            if (!$data) {
+            if (!$data || !$qualityNames) {
                 return null;
             }
 
@@ -112,7 +113,7 @@ class IEconItemsGetSchema
             foreach ($data as $id => $value) {
                 $this->qualities[$value] = array(
                     "id" => $value,
-                    "name" => $data->qualityNames->$id,
+                    "name" => $qualityNames[$id],
                     "tag" => $id
                 );
             }
@@ -141,9 +142,9 @@ class IEconItemsGetSchema
             $this->origins = array();
 
             foreach ($data as $set) {
-                $this->origins[$set->origin] = array(
-                    "id" => $set->origin,
-                    "name" => $set->name
+                $this->origins[$set["origin"]] = array(
+                    "id" => $set["origin"],
+                    "name" => $set["name"]
                 );
             }
         }
