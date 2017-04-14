@@ -21,6 +21,16 @@ composer install
 
 Note that this project uses GuzzleHTTP which has a bug in it's default configuration where it'll insert apparently random 8 digit numbers in the HTTP stream. Please ensure that php-curl is installed to work around this bug. (https://github.com/guzzle/guzzle/issues/1385) As php-curl isn't technically a requirement I've not listed it as a depenency for composer.
 
+## Unit Tests
+
+We're using PHPUnit for unit tests. It should be installed by composer with the "dev" requirements and will be runnable using the following command:
+
+```
+./vendor/bin/phpunit
+```
+
+It's expected that all unit tests pass before any pull request is issued. Pull requests with failing unit tests or that introduce functionality without unit tests will be rejected.
+
 ## Contributing
 All contributions must contain a signed-off-by line in accordance with the Developer Certificate of Origin: http://developercertificate.org/
 
