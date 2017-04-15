@@ -1,6 +1,6 @@
 <?php
 
-namespace CE\data\steam;
+namespace CE\Data\Steam;
 
 use GuzzleHttp\Client;
 
